@@ -1,5 +1,7 @@
 // Import the framework and instantiate it
 import Fastify from 'fastify'
+import './db/db.js'
+
 const fastify = Fastify({
   logger: true
 })
@@ -13,6 +15,9 @@ fastify.get('/', function handler (request, reply) {
 })
 
 fastify.get('/produtos', function handler (request, reply) {
+  return { hello: 'Produtos Rodando' }
+})
+fastify.get('/produto/:id', function handler (request, reply) {
   return { hello: 'Produtos Rodando' }
 })
 
